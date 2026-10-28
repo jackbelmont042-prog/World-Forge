@@ -56,22 +56,45 @@ export const SettingsModal: React.FC = () => {
           </div>
 
           {/* Android Mobile PWA & Native APK Packaging Guide */}
-          <div className="p-4 rounded-xl border border-[#232936] bg-[#151922] space-y-2">
+          <div className="p-4 rounded-xl border border-[#232936] bg-[#151922] space-y-3">
             <div className="flex items-center gap-2 text-white font-serif font-semibold text-xs">
               <Smartphone className="h-4 w-4 text-[#d4af37]" />
-              <span>Testing & Installing on Android</span>
+              <span>Android Testing & APK Installation</span>
             </div>
-            <p>
-              <strong>1. Install as PWA:</strong> Open WorldForge in Chrome on your Android phone. Tap the browser menu (⋮) and tap <strong>&quot;Install app&quot;</strong> or <strong>&quot;Add to Home screen&quot;</strong>. The app will launch in full standalone mode without browser bars.
-            </p>
-            <p>
-              <strong>2. Native Android APK Steps:</strong> To package this application as a standalone native Android APK for distribution or Google Play:
-            </p>
-            <ol className="list-decimal list-inside space-y-1 pl-1 text-[11px] text-[#cad0dc]">
-              <li>Use Google&apos;s <code>@bubblewrap/cli</code> (Trusted Web Activity): <code>npx @bubblewrap/cli init --manifest=https://&lt;app-url&gt;/manifest.webmanifest</code></li>
-              <li>Or wrap the React SPA via <strong>Capacitor</strong>: <code>npm install @capacitor/core @capacitor/android && npx cap init && npx cap add android</code></li>
-              <li>Build the release APK using Android Studio or Gradle: <code>./gradlew assembleRelease</code></li>
-            </ol>
+            
+            <div className="p-3 rounded-lg border border-[#374151] bg-[#10141d] space-y-2">
+              <div className="text-[11px] font-semibold text-[#f3d99b]">Method 1: Direct 1-Click APK Generator (Recommended)</div>
+              <p className="text-[11px] text-[#cad0dc]">
+                Use the official PWABuilder service (created by Microsoft &amp; Google) to automatically package this PWA into an installable signed <code>.apk</code> or <code>.aab</code> bundle for your phone:
+              </p>
+              <a
+                href="https://www.pwabuilder.com/reportcard?site=https://ais-pre-atopno2yo75ebv3mzaa3f3-748704448533.europe-west2.run.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#c99a3e] text-black font-semibold text-xs hover:bg-[#dfb04e] transition"
+              >
+                <span>Open PWABuilder APK Generator</span>
+                <span className="text-[10px]">↗</span>
+              </a>
+              <p className="text-[10px] text-[#8e95a5]">
+                On PWABuilder: Click <strong>&quot;Package for Stores&quot;</strong> &rarr; Choose <strong>&quot;Android&quot;</strong> &rarr; Click <strong>&quot;Generate&quot;</strong> to download the zip containing your signed <code>app-release-signed.apk</code>.
+              </p>
+            </div>
+
+            <div className="space-y-1 text-[11px] text-[#cad0dc]">
+              <div className="font-semibold text-white">Method 2: Instant Installation without APK File</div>
+              <p>
+                Open WorldForge in Chrome on your Android phone. Tap Chrome&apos;s menu (<strong>⋮</strong>) and choose <strong>&quot;Install app&quot;</strong> or tap the <strong>&quot;Install App&quot;</strong> button in the header. It creates a native Android home screen icon, runs full-screen with offline storage, and requires no APK download.
+              </p>
+            </div>
+
+            <div className="space-y-1 text-[11px] text-[#cad0dc] pt-1">
+              <div className="font-semibold text-white">Method 3: Build APK from Source via CLI</div>
+              <ol className="list-decimal list-inside space-y-1 pl-1 text-[10px] text-[#8e95a5]">
+                <li>Google Bubblewrap: <code>npx @bubblewrap/cli init --manifest=https://ais-pre-atopno2yo75ebv3mzaa3f3-748704448533.europe-west2.run.app/manifest.webmanifest && bubblewrap build</code></li>
+                <li>Capacitor: <code>npm i @capacitor/core @capacitor/android && npx cap init && npx cap add android</code></li>
+              </ol>
+            </div>
           </div>
 
           {/* Re-seed Sample World */}

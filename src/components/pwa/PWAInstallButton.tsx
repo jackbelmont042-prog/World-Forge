@@ -94,17 +94,31 @@ export const PWAInstallButton: React.FC<{ compact?: boolean }> = ({ compact }) =
                 </div>
               )}
 
-              <div className="p-3 rounded-xl bg-[#141820] border border-[#232938] text-[11px] text-[#8b92a2]">
-                <strong>Building a Native APK package:</strong> Developers can bundle this codebase into a native Android APK using Google&apos;s <code>Bubblewrap CLI</code> (Trusted Web Activity) or <code>Capacitor</code>.
+              <div className="p-3 rounded-xl bg-[#141820] border border-[#232938] space-y-2 text-[11px] text-[#8b92a2]">
+                <div>
+                  <strong className="text-white">Need a standalone .apk file?</strong>
+                </div>
+                <p>
+                  You can generate a signed Android <code>.apk</code> or <code>.aab</code> package directly via PWABuilder (backed by Google Bubblewrap):
+                </p>
+                <a
+                  href="https://www.pwabuilder.com/reportcard?site=https://ais-pre-atopno2yo75ebv3mzaa3f3-748704448533.europe-west2.run.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#c99a3e] text-black font-semibold text-xs hover:bg-[#dfb04e] transition"
+                >
+                  <span>Generate Android APK (PWABuilder)</span>
+                  <span className="text-[10px]">↗</span>
+                </a>
               </div>
             </div>
 
-            <div className="mt-6 flex justify-end gap-2">
+            <div className="mt-5 flex justify-end gap-2">
               <button
                 onClick={() => setShowModal(false)}
-                className="w-full rounded-xl bg-[#d4af37] py-2.5 text-xs font-semibold text-[#0d1015] hover:bg-[#e4bf47] transition shadow-md"
+                className="w-full rounded-xl bg-[#262d3a] py-2.5 text-xs font-semibold text-[#e5e7eb] hover:bg-[#323b4c] transition shadow-md"
               >
-                Understood
+                Close
               </button>
             </div>
           </div>
