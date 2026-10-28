@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --bg-primary: #0f1115;
+    --bg-card: #15181f;
+    --bg-card-hover: #1b1f28;
+    --border-color: #262c38;
+    --text-primary: #e6e8eb;
+    --text-secondary: #9097a6;
+    --accent-gold: #d4af37;
+    --accent-gold-hover: #e5c358;
+  }
+
+  .theme-parchment {
+    --bg-primary: #f5f0e3;
+    --bg-card: #ece5d3;
+    --bg-card-hover: #e2d9c2;
+    --border-color: #d1c5a9;
+    --text-primary: #2a241b;
+    --text-secondary: #685d4c;
+    --accent-gold: #8c6a1e;
+    --accent-gold-hover: #715516;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-heading);
+  }
+
+  input, textarea, select {
+    user-select: text;
+  }
+}
+
+/* Custom Cartographic Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(18, 22, 28, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.5);
+}
+
+/* Subtle antique manuscript pattern overlay */
+.bg-manuscript {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}

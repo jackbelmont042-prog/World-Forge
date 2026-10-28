@@ -1,0 +1,6 @@
+{
+  "name": "WorldForge - Professional Worldbuilding Studio",
+  "description": "Mobile-first worldbuilding application for authors, RPG game masters, and creators to design, connect, and expand fictional universes with offline local storage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
