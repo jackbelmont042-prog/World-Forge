@@ -521,6 +521,8 @@ export interface MapMarker {
   description?: string;
 }
 
+import type { MapDocument } from './mapEditor';
+
 export interface WorldMap {
   id: string;
   worldId: string;
@@ -528,6 +530,7 @@ export interface WorldMap {
   imageUrl?: string; // custom upload or parchment generator
   mapType: 'world' | 'continent' | 'region' | 'city' | 'dungeon';
   markers: MapMarker[];
+  document?: MapDocument;
   createdAt: string;
   updatedAt: string;
 }

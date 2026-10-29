@@ -1,4 +1,5 @@
 import { FullWorldPackage } from '../types/world';
+import { getSampleAethelgardMapDocument } from './sampleMapDocument';
 
 export const SAMPLE_WORLD_PACKAGE: FullWorldPackage = {
   schemaVersion: 1,
@@ -803,6 +804,7 @@ export const SAMPLE_WORLD_PACKAGE: FullWorldPackage = {
       worldId: 'world-shattered-reach',
       title: 'The Great Sky-Archipelago Chart',
       mapType: 'world',
+      document: getSampleAethelgardMapDocument('world-shattered-reach'),
       markers: [
         { id: 'mk-spire', locationId: 'loc-spire-of-aethel', name: 'Sunburst Spire', x: 52, y: 32, icon: 'castle', description: 'Seat of the Solar Hegemony' },
         { id: 'mk-haven', locationId: 'loc-haven-dock', name: 'Haven Sky-Dock', x: 44, y: 42, icon: 'port', description: 'Bustling smuggler haven and ship slipways' },

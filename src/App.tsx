@@ -69,13 +69,17 @@ const MainContent: React.FC = () => {
       <div className="flex flex-1 overflow-hidden">
         <BottomNav />
 
-        <main className="flex-1 overflow-y-auto p-3 sm:p-6 bg-manuscript">
-          <div className="mx-auto max-w-6xl">
-            {activeTab === 'dashboard' && <WorldDashboard />}
-            {activeTab === 'characters' && <CharacterEncyclopedia />}
-            {activeTab === 'locations' && <LocationAtlas />}
-            {activeTab === 'map' && <InteractiveMapCanvas />}
-            {activeTab === 'politics' && <PoliticsModule />}
+        {activeTab === 'map' ? (
+          <main className="flex-1 overflow-hidden p-0 bg-[#0c0f14]">
+            <InteractiveMapCanvas />
+          </main>
+        ) : (
+          <main className="flex-1 overflow-y-auto p-3 sm:p-6 bg-manuscript">
+            <div className="mx-auto max-w-6xl">
+              {activeTab === 'dashboard' && <WorldDashboard />}
+              {activeTab === 'characters' && <CharacterEncyclopedia />}
+              {activeTab === 'locations' && <LocationAtlas />}
+              {activeTab === 'politics' && <PoliticsModule />}
             {activeTab === 'factions' && <FactionsModule />}
             {activeTab === 'speciesCultures' && <SpeciesCulturesModule />}
             {activeTab === 'systems' && <MagicTechSystemsModule />}
@@ -90,6 +94,7 @@ const MainContent: React.FC = () => {
             {activeTab === 'exportImport' && <BackupExportModule />}
           </div>
         </main>
+      )}
       </div>
 
       {/* Global Modals & Indicators */}
